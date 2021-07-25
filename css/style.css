@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Exo', 'Abel', sans-serif;
+    font-size: 4em;
+    background-color: black;
+}
+
+.prllX_wrp{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 300px;
+}
+
+.split{
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.420), rgba(0, 0, 0, 0.420)), url(../img/bkg2\ -\ Copy.png);
+    background-size: cover;
+    height: 20vh;
+    background-color: rgb(90, 90, 90);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: seashell;
+    font-size: 9vh;
+}
+
+.intro_screen{
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_name{
+    height: max-content !important;
+    position: absolute;
+    font-size: 8vw;
+    margin: 5vh 5vw;
+    color: whitesmoke;
+}
+
+.project_screen{
+    height: 100vh;
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_screen{
+    height: max-content !important;
+    background-color: dimgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url(../img/mid-title.png);
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.container_screen .card{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+    border-color: rgba(151, 151, 151, 0.563);
+    border-width: 3px;
+    border-style: solid;
+}
+
+.container_screen .card::before{
+    /* content: ''; */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+.container_screen .card .content{
+    padding: 10px;
+    text-align: center;
+}
+
+
+.container_screen .card .content h2{
+    position: relative;
+    /* right: 30px; */
+    /* font-size: 25px; */
+    font-weight: 800;
+    color: rgba(255, 255, 0, 0.439);
+    z-index: 1;
+    opacity: 0.1;
+    transition: 0.5%;
+}
+
+.container_screen .card:hover .content h2{
+    opacity: 1;
+}
+
+.container_screen .card .content h3{
+    position: relative;
+    font-size: 40px;
+    color: whitesmoke;
+    z-index: 2;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    transition: 0.5%;
+}
+
+.container_screen .card .content p{
+    position: relative;
+    font-size: 20px;
+    color: whitesmoke;
+    z-index: 2;
+    opacity: 0.5;
+    font-weight: 300;
+    transition: 0.5%;
+}
+
+
+.container_screen .card .content a{
+    display: inline-block;
+    padding: 0 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+.container_screen .card .content a:hover{
+    text-transform: uppercase;
+    text-decoration: overline;
+}
+
+.container_screen .card:hover .content h3,
+.container_screen .card:hover .content p,
+.container_screen .card:hover .content a{
+    opacity: 1;
+}
+.outro_screen{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.690), rgba(0, 0, 0, 0.690)), url(../img/contact-back.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prllX_grp{
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+}
+
+.prllX_lyr{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.base_lyr{
+    /*scale calculation: 1 + ((Z transform value * -1) / perspective)*/
+    transform: translateZ(-300px) scale(2.1);
+}
+
+.mid_lyr{
+    transform: translateZ(0);
+}
+
+#intro{
+    z-index: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.75)), url(../img/title.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#about_me{
+    z-index: -1;
+}
+
+#about_me > .base_lyr{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bkg2.png);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: rgba(156, 174, 0, 0.693);
+    text-align: center;
+    font-size: 13vw;
+}
+
+#me-text{
+    max-width: 90;
+    max-height: 90;
+    margin: 10vh 10vw;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 4vh;
+}
+
+#group-2{
+    z-index: 0;
+}
+
+#group-2 > .mid_lyr{
+    background-color: mediumaquamarine;
+}
+
+#contact_me{
+    z-index: 0;
+    color: whitesmoke;
+}
+
+.portfolio{
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.portfolio_item{
+    padding: 10px;
+}
+
+.portfolio__img {
+    transition: 
+        transform 250ms cubic-bezier(.5, 0, .5, 1),
+        opacity 250ms linear;
+}
+
+.portfolio__img:hover{
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+.divide{
+    height: 7px;
+    background-color: gray;
+}
+
+.nav {
+    position: fixed;
+    bottom: 0;
+    margin-top: 20px;
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.nav__link,
+.nav_res{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.nav__item{
+    margin: 0 .5em;
+    font-size: max(2vh, 2vw);
+    opacity: 0.5;
+    position: relative;
+    bottom: 1.5vh;
+    text-transform: lowercase;
+}
+
+.nav__item:hover{
+    text-transform: uppercase;
+    text-decoration: overline;
+    opacity: 1;
+}
+
+.outro_screen a{ 
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.footer__link{
+    font-size: max(3vh, 4vw);
+    font-weight: var(--fw-bold);
+    position:absolute;
+}
+
+.footer__link:hover{
+    text-decoration: underline;
+}
+
+.footer__link:hover,
+.social-list__link:hover{
+    opacity: .7;
+}
+
+.footer__link:hover{
+    text-decoration: underline;
+}
+
+.social-list {
+    position:absolute;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+    position: relative;
+    top: 10vh;
+    font-size: xx-large;
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+.contacttt{
+    font-size: max(7vh, 8vw);
+    justify-content: center;
+    margin: 0 .5em;
+    position: relative;
+    bottom: 20vh;
+}
